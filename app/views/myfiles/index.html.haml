@@ -1,0 +1,25 @@
+%h1 Listing myfiles
+
+%table
+  %thead
+    %tr
+      %th Title
+      %th Filename
+      %th Comment
+      %th
+      %th
+      %th
+
+  %tbody
+    - @myfiles.each do |myfile|
+      %tr
+        %td= myfile.title
+        %td= myfile.filename
+        %td= myfile.comment
+        %td= link_to 'Show', myfile
+        %td= link_to 'Edit', edit_myfile_path(myfile)
+        %td= link_to 'Destroy', myfile, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Myfile', new_myfile_path

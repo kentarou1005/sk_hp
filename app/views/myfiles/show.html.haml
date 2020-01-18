@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @myfile.title
+%p
+  %b Filename:
+  = @myfile.filename
+%p
+  %b Comment:
+  = @myfile.comment
+
+= link_to 'Edit', edit_myfile_path(@myfile)
+\|
+= link_to 'Back', myfiles_path

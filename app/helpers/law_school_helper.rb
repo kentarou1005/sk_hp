@@ -1,0 +1,2 @@
+module LawSchoolHelper
+end

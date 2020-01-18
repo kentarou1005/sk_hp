@@ -1,0 +1,73 @@
+.lecture
+
+  .header
+    = render partial: "main_page/header"
+
+  .body
+  
+    %table 
+      %caption
+        授業割り
+      %tr
+        %th
+        %th 月
+        %th 火
+        %th 水
+        %th 木
+        %th 金
+        %th 土
+      %tr
+        %td １限目 (09:00  ~ 10:30)
+        %td.form
+          = @name.all.where("day ?", "月")
+          -# - @name.each do |name|
+          -#   %li
+          -#     = name.day
+        %td 
+        %td 
+        %td 
+        %td 
+        %td 
+      %tr
+        %td ２限目 (10:40 ~ 12:10)
+        %td 
+        %td 
+        %td 
+        %td 
+        %td 
+        %td 
+      %tr
+        %td 12:10 ~ 12:40
+        %td{colspan: "6"} 昼休み
+      %tr
+        %td ３限目 (13:00 ~ 14:30)
+        %td 
+        %td 
+        %td 
+        %td 
+        %td 
+        %td 
+      %tr
+        %td ４限目(14:30 ~ 16:10)
+        %td 
+        %td 
+        %td 
+        %td 
+        %td 
+        %td 
+      %tr
+        %td ５限目 (16:20 ~ 18:10)
+        %td 
+        %td 
+        %td 
+        %td 
+        %td 
+        %td 
+
+    .caution
+      ※ オフィスアワーでの来室を希望する学生は，
+      %a{href:"mailto:keisuke@law.nihon-u.ac.jp"}<>メール（ここをクリックしてください。）
+      で事前に連絡をいただくよう，お願いいたします。
+      %br なお，オフィスアワーは，担当授業の内容に関する質問を受ける趣旨で設けた時間帯ですので，それ以外の法律相談や一般的な学生相談はご遠慮ください。
+      %rb また，法学部用のオフィスアワーと大学院法務研究科用のオフィスアワーとに分かて時間を設けていますので，それぞれ他方に所属する学生の受入れを予定していません。
+

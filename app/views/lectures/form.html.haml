@@ -1,0 +1,53 @@
+.lecture_registration
+  講義登録
+  
+  .registration_form
+    = form_for @lecture do |f|
+      .lecture_name
+        講義名：
+        = f.text_field :name, class: "regi", placeholder: "講義名を入力してくだい"
+      .lecture_day
+        曜日：
+        = f.select :day, ["月", "火", "水", "木", "金", "土"], include_blank: "講義の曜日を選択してください" 
+        曜日
+        -# = f.collection_select :day, Periods.all, :id, :name
+          -# = Period.all.each do |period|
+          -#   = peiod.period
+        -# = f.text_field :day, class: "regi", placeholder: "講義の日を入力してくだい"
+      .lecture_period
+        時限目：
+        = f.select :period_id, ["1", "2", "3", "4", "5", "6(2部1限)", "7(2部2限)", "8(2部3限)"], include_blank: "講義が何時限目か選択してください"
+        限目
+      .lecture_pdf
+        レジュメ１：
+        = f.file_field :pdf1, class: "regi", placeholder: "講義で使うレジュメを選択してください"
+      .lecture_pdf
+        レジュメ２：
+        = f.file_field :pdf2, class: "regi", placeholder: "講義で使うレジュメを選択してください"
+      .lecture_pdf
+        レジュメ３：
+        = f.file_field :pdf3, class: "regi", placeholder: "講義で使うレジュメを選択してください"
+      .lecture_pdf
+        レジュメ４：
+        = f.file_field :pdf4, class: "regi", placeholder: "講義で使うレジュメを選択してください"
+      .lecture_pdf
+        レジュメ５：
+        = f.file_field :pdf5, class: "regi", placeholder: "講義で使うレジュメを選択してください"
+        -# レジュメ６：
+        -# = f.file_field :pdf, class: "regi", placeholder: "講義で使うレジュメを選択してください"
+      = f.submit "この講義を登録する"
+
+  .show 
+    -# - Lecture.all.each do |name|
+    -#   %li
+    -#     = link_to name.name
+    -#     = name.id
+    -#     = name.name
+    -#     = name.day
+
+  .test
+    -# = link_to Lecture.find(25).name
+  
+    -# = link_to "M1C2008S.pdf", {:controller => "lectures",:action=>"downloadpdf"}
+    -# = link_to 'download',donwload_pdf_path(myfile), :class => 'btn btn-default btn-xs'
+-# = link_to "PDFファイル",{:controller => "myfile",:action=>"downloadpdf"}

@@ -1,0 +1,144 @@
+.study
+
+  .header
+    = render partial: "main_page/header"
+
+  .body
+    .profile
+      %p 氏名：清水 恵介（しみず けいすけ）
+      %p 研究分野：民法（近時は特に担保法）
+
+    .study_registration
+      = form_for @study do |f|
+        .study_book
+          論文名、著作名：
+          = f.text_field :book, class:"regi" ,placeholder: "論文名、著作名を入力してください"
+        .study_details
+          詳細：
+          = f.text_field :details, class:"regi", placeholder: "詳細を入力してください"
+        .study_url
+          URL：
+          = f.text_field :url, class:"regi", placeholder: "URLを入力してください"
+        = f.submit "登録する"
+    .book
+      %table
+        %caption
+        %tr
+          %th 主な論文・著書
+          %th 詳細
+        %tr
+          %td リゾートマンションの売買契約違反による解除（水辺芳郎先生との共著）
+          -# %td.book_name 
+          -#   = Study.find(2).book
+          %td 日本法学64巻2号441～451頁（平成10年9月）
+        %tr
+          %td 無権代理人の履行責任
+          %td 日本法学65巻4号〔水辺芳郎教授古稀記念号『私法学をめぐる現代的諸問題』〕455～483頁（平成12年3月）
+        %tr 
+          %td 民商法講座(3)権利外観法理における過失の意義」（山川一陽教授監修）
+          %td 月刊民事法情報167号125～130頁（平成12年8月）
+        %tr
+          %td 小野幸二編『演習ノート親族法・相続法〔全訂版第2刷〕
+          %td 「身分行為と意思」／「第三者の侵害による婚約破棄など」／「近親婚の禁止および婚姻適齢」／「離婚届」／「無効行為の転換」／「親権者と子の利益相反行為」／「親権の喪失」／「成年後見制度」／「相続人と相続分」／「生命保険金，死亡退職金の相続性」／「二重資格の相続人」／「『後継ぎ遺贈』の効力」／「死因贈与と遺贈」（法学書院，平成16年12月〔全訂版初刷，平成14年4月〕）
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
+        %tr
+          %td 
+          %td 
