@@ -1,0 +1,2 @@
+class Reprint < ApplicationRecord
+end

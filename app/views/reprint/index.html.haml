@@ -4,4 +4,68 @@
     = render partial: "main_page/header"
 
   .body
-    復刻論文
+    .main-body
+
+      .title
+        論文復刻
+      .summary
+        %p 施行後１００年を経過した日本の民法典。        
+        %p その解釈等をめぐる論文もこれまで無数に執筆されてきたが，そのうち，古典と称される初期の論文中には，著者の死後５０年を経過し，著作権保護期間（著作権法５１条２項）が満了したものが既に幾つもある。
+        %p これらの古典は，現代においてなお参照に値するものを多く含んでいるはずであるが，実際には，残存部数の不足や購入価格の高騰，書物の劣化といった諸事情により，参照が困難であることが多く，過去の学説からの継承・発展という学問の基礎的営為を現に阻害してしまっている（その時代を生きていない後学の徒にとっては特にそうである。）。
+        %p そのため，これらの諸論文をテキスト・ファイル化し，ＷＥＢサイト上で無料配信することには温故知新以上の大きな意義があるのではなかろうか…。
+        %p なお，底本の変更部分については著作権法による保護を主張いたしません。
+        %p また，現段階では，入力作業の終了後，最低限度の体裁を整えただけで公開しており，誤入力が多数存在しております。この点をご理解の上，ご利用ください。これらの誤入力については随時訂正していく予定です。
+        %p もし訂正箇所をご指摘いただけるようでしたら，その点も随時反映させたいと思いますので（ご連絡は
+        %a{href:"mailto:keisuke@law.nihon-u.ac.jp"}<>こちらのメールアドレス
+        から可能です。），ご協力のほどお願いいたします。
+      .introduce
+        %table
+          %td
+            .introduce__summary
+              論文復刻の前提作業として，著作権保護期間が既に満了した著者をリストアップするとともに，その代表的著作を著書を中心に列挙することとしたものである。
+          %td
+            .introduce__list
+              =link_to "著作権切れ民法論文一覧", "/reprint/list"
+
+      .reprint_registration
+        = form_for @reprint, url:{controller: :reprint, action: :index} do |f|
+          .reprint__name
+            著作名：
+            = f.text_field :author, class:"regi" ,placeholder: "著者名を入力してください"
+          .reprint__book_name
+            書籍名：
+            = f.text_field :book, class:"regi", placeholder: "書籍名を入力してください"
+          .reprint__company
+            出版社名：
+            = f.text_field :company, class:"regi", placeholder: "出版社を入力してください"
+          .reprint__year
+            発刊年月日:
+            != sprintf(f.date_select(:year , prompt:"--", use_month_numbers:true, start_year:Time.now.year, end_year:1800, date_separator:'%s'),'年','月')+'日'
+          = f.submit "登録する"
+        = flash[:notice]
+
+
+      .list
+        %table
+          %tr
+            %th 著者名
+            %th 書籍名
+            %th 出版社名
+            %th 発刊日
+            %th 削除
+            - @reprints.each do |reprint|
+              %tr
+                %td
+                  = reprint.author
+                %td
+                  = reprint.book
+                %td
+                  = reprint.company
+                %td
+                  = reprint.year
+                %td
+                  = link_to "削除", "/reprint/#{reprint.id}", method: :delete
+      .delete
+        = flash[:alert]
+      .details 
+        = link_to "ファイル作成者一覧", ""

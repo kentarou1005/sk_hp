@@ -72,3 +72,5 @@ gem 'devise'
 gem 'pry'
 
 gem 'erb2haml'
+
+gem 'jquery-rails'
