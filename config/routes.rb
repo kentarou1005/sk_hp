@@ -15,8 +15,11 @@ Rails.application.routes.draw do
 
   resources :studies, only: [:index, :create, :destory] 
 
-  resources :reprint, only: [:index, :create, :destory] 
-  get "reprint/list"
+  resources :reprint, only: [:index, :create, :destory] do 
+    collection do 
+      get "list"
+    end
+  end
 
   # get 'blog/index'
   # get 'link/index'
